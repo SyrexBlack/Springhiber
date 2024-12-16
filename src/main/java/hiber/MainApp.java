@@ -37,7 +37,7 @@ public class MainApp {
          System.out.println();
       }
 
-      User foundUser = userService.findUserByCar("BMW", 5);
+      User foundUser = userService.getUserByCarModelAndSeries("BMW", 5);
       if (foundUser != null) {
          System.out.println("Найден пользователь с машиной BMW серии 5:");
          System.out.println("Id = " + foundUser.getId());
