@@ -18,11 +18,8 @@ public class MainApp {
       Car car1 = new Car("Toyota", 1);
       Car car2 = new Car("BMW", 5);
 
-      User user1 = new User("User1", "Lastname1", "user1@mail.ru");
-      user1.setCar(car1);
-
-      User user2 = new User("User2", "Lastname2", "user2@mail.ru");
-      user2.setCar(car2);
+      User user1 = new User("User1", "Lastname1", "user1@mail.ru", car1);
+      User user2 = new User("User2", "Lastname2", "user2@mail.ru", car2);
 
       userService.add(user1);
       userService.add(user2);
@@ -40,7 +37,7 @@ public class MainApp {
          System.out.println();
       }
 
-      User foundUser = userService.getUserByCar("BMW", 5);
+      User foundUser = userService.findUserByCar("BMW", 5);
       if (foundUser != null) {
          System.out.println("Найден пользователь с машиной BMW серии 5:");
          System.out.println("Id = " + foundUser.getId());
